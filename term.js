@@ -17,7 +17,7 @@ m = n.getMonth() + 1;
 d = n.getDate();
 document.getElementById("date").innerHTML ="Today is, " + m + "/" + d + "/" + y;
 var c = "<a href='https://github.com/karanveer-13'>GitHub</a> <a href='https://www.linkedin.com/in/karanveer-malik-596075275/'>LinkedIn</a><br> karanveermalik13@gmail.com <img id='copyimg' src='copy.png' onclick='cpy()'><br>8791236323</br>"; 
-
+var ki = "It symbolizes my commitment to perfection and my enthusiasm for developing influential answers. Created with a simple and sleek design influenced by CLI, Terminal Portfolio provides visitors with a one-of-a-kind opportunity to discover my profile. This endeavor showcases my dedication to constantly learning and my proficiency in staying updated on new technologies. My goal in creating Terminal Portfolio is to showcase my skills in web development, user experience design, and project management. Additionally, it acts as proof of my ingenuity and focus on specifics. With Terminal Portfolio, I encourage you to explore my path, uncover my successes, and delve into the scope of my abilities. It not only displays my professional accomplishments but also shows my passion for technology and innovation.<br><br>";
  i.addEventListener("keypress", function(event) {
     if(event.key === "Enter")
     {
@@ -42,7 +42,7 @@ var c = "<a href='https://github.com/karanveer-13'>GitHub</a> <a href='https://w
         }   
         else if(k==="about")
         {
-            $("#text").append("<br>Terminal Portfolio is a project crafted to showcase my professional skills and accomplishments in an innovative and interactive manner. It represents my dedication to excellence and my passion for creating impactful solutions. Designed with a minimalist aesthetic and inspired by command-line interfaces (CLI), Terminal Portfolio offers visitors a unique experience to explore my profile.This project reflects my commitment to continuous learning and my ability to adapt to emerging technologies. By developing Terminal Portfolio, I aim to demonstrate my proficiency in web development, user experience design, and project management. Moreover, it serves as a testament to my creativity and attention to detail.Through Terminal Portfolio, I invite you to delve into my journey, discover my achievements, and explore the depth of my skills. It is not only a showcase of my professional endeavors but also a testament to my enthusiasm for technology and innovation.<br><br>");
+            $("#text").append("<br>Terminal Portfolio is a project crafted to showcase my professional skills and accomplishments in an innovative and interactive manner."+ki);
         }  
         else if(k==="contact")
         {
