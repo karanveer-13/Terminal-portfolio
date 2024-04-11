@@ -1,6 +1,6 @@
 var script = document.createElement('script');
 script.src = 'https://code.jquery.com/jquery-3.7.1.min.js';
-document.getElementsByTagName('head')[0].appendChild(script);
+document.getElementsByTagName('body')[0].append(script);
 
 function focus_input() {
     document.getElementById("input").focus();
@@ -58,8 +58,43 @@ var ki = "It symbolizes my commitment to perfection and my enthusiasm for develo
     document.getElementById("win").scrollTop = document.getElementById("win").scrollHeight;
  });
 
-//  $(document).ready(function(){
-//     $(".container").draggable({
-//         handle: ".topbar"
-//     });
-// });
+ dragElement(document.getElementsByClassName("container"));
+ function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    var topbars = document.getElementsByClassName("topbar");
+    for (var i = 0; i < topbars.length; i++) {
+        topbars[i].onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        for (var i = 0; i < elmnt.length; i++) {
+            elmnt[i].style.top = (elmnt[i].offsetTop - pos2) + "px";
+            elmnt[i].style.left = (elmnt[i].offsetLeft - pos1) + "px";
+        }
+    }
+
+    function closeDragElement() {
+        // stop moving when mouse button is released:
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
