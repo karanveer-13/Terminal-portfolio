@@ -11,6 +11,9 @@ function cpy(){
     navigator.clipboard.writeText("karanveermalik13@gmail.com");
 } 
 
+const validCommands = ['help', 'bio', 'skills', 'contact', 'about', 'cls'];
+
+
 n =  new Date();
 y = n.getFullYear();
 m = n.getMonth() + 1;
@@ -49,8 +52,13 @@ var ki = "It symbolizes my commitment to perfection and my enthusiasm for develo
             $("#text").append("<br>"+c+"<br>");
         }  
         else
-        {
-            $("#text").append("<p>>>not a valid command</p> <br>");
+        {  
+            var s = suggestCommand(k);
+            if (s) {
+                $("#text").append('<p>Did you mean '+s+' ?</p>');
+            } else {
+                $("#text").append("<p>>>not a valid command</p> <br>");
+            }
         }
 
         i.value = "";
@@ -97,4 +105,59 @@ var ki = "It symbolizes my commitment to perfection and my enthusiasm for develo
         document.onmouseup = null;
         document.onmousemove = null;
     }
+}
+
+function suggestCommand(command) {
+    let minDistance = Infinity;
+    let closestCommand = '';
+
+    // Calculate the Levenshtein distance for each command
+    validCommands.forEach(validCommand => {
+        const distance = levenshteinDistance(command.toLowerCase(), validCommand.toLowerCase());
+        if (distance < minDistance) {
+            minDistance = distance;
+            closestCommand = validCommand;
+        }
+    });
+
+    // If the closest command is similar enough, suggest it
+    if (minDistance <= 2) { // Adjust the threshold as needed
+        return closestCommand;
+    } else {
+        return null; // No suggestion found
+    }
+}
+
+// Function to calculate the Levenshtein distance between two strings
+function levenshteinDistance(a, b) {
+    if (a.length === 0) return b.length;
+    if (b.length === 0) return a.length;
+
+    const matrix = [];
+
+    // Initialize the matrix
+    for (let i = 0; i <= b.length; i++) {
+        matrix[i] = [i];
+    }
+
+    for (let j = 0; j <= a.length; j++) {
+        matrix[0][j] = j;
+    }
+
+    // Calculate the distance
+    for (let i = 1; i <= b.length; i++) {
+        for (let j = 1; j <= a.length; j++) {
+            if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                matrix[i][j] = matrix[i - 1][j - 1];
+            } else {
+                matrix[i][j] = Math.min(
+                    matrix[i - 1][j - 1] + 1, // Substitution
+                    matrix[i][j - 1] + 1,     // Insertion
+                    matrix[i - 1][j] + 1      // Deletion
+                );
+            }
+        }
+    }
+
+    return matrix[b.length][a.length];
 }
