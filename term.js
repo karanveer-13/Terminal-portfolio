@@ -26,6 +26,7 @@ var ki = "It symbolizes my commitment to perfection and my enthusiasm for develo
     {
         event.preventDefault();
         var k = i.value;
+        k = k.toLowerCase();
         $("#text").append(">>"+k);
         if(k==="help" || k==="ls")
         {
