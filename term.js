@@ -30,15 +30,15 @@ var ki = "It symbolizes my commitment to perfection and my enthusiasm for develo
         $("#text").append(">>"+k);
         if(k==="help" || k==="ls")
         {
-            $("#text").append("<p><b>bio</b> &emsp;&emsp;     show my bio information</p><p><b>skills</b> &emsp;&emsp;   list all of my skills</p><p><b>contact</b> &emsp; list of all contacts</p><p><b>about</b> &emsp;&emsp;   to see what is terminal portfolio</p><p><b>cls</b> &emsp;&emsp;&emsp;    to clear screen</p><br>");
+            $("#text").append("<br><b>bio</b> &emsp;&emsp;     show my bio information <br><b>skills</b> &emsp;&emsp;   list all of my skills <br><b>contact</b> &emsp; list of all contacts <br><b>about</b> &emsp;&emsp;   to see what is terminal portfolio <br><b>cls</b> &emsp;&emsp;&emsp;    to clear screen<br><br>");
         }
         else if(k==="bio")
         {
-            $("#text").append("<br><img id='me' src='Diwali_2021-19 (1).jpg'></img><br><small><small>Joined the world 20 years ago</small></small><p>Hello I am B.Tech IT student at VIT Vellore. Passionate about web development and filled</p><p> with curiosity about new things realted to coding.</p><br>");
+            $("#text").append("<br><img id='me' src='Diwali_2021-19 (1).jpg'></img><br><small><small>Joined the world 20 years ago</small></small><br>Hello I am B.Tech IT student at VIT Vellore. Passionate about web development and filled with curiosity about new things realted to coding.<br><br>");
         }
         else if(k==="skills")
         {
-            $("#text").append("<p>Programming Languages: JavaScript, Python, Java, C, C++</p><p>Web and Database: Html, CSS, MySQL, SQLPlus, MongoDB</p><p>Frameworks: Bootstrap, Node JS, React JS, React Native</p><p>Technologies: Git, VSCode, MS Office</p><p>Languages: English, Hindi, Japanese</p><br>");
+            $("#text").append("<br>Programming Languages: JavaScript, Python, Java, C, C++ <br>Web and Database: Html, CSS, MySQL, SQLPlus, MongoDB <br>Frameworks: Bootstrap, Node JS, React JS, React Native <br>Technologies: Git, VSCode, MS Office <br>Languages: English, Hindi, Japanese <br><br>");
         }
         else if(k==="cls")
         {
@@ -56,9 +56,9 @@ var ki = "It symbolizes my commitment to perfection and my enthusiasm for develo
         {  
             var s = suggestCommand(k);
             if (s) {
-                $("#text").append('<p>Did you mean '+s+' ?</p>');
+                $("#text").append('<br>Did you mean '+s+' ?<br><br>');
             } else {
-                $("#text").append("<p>>>not a valid command</p> <br>");
+                $("#text").append("<br>>>not a valid command <br><br>");
             }
         }
 
