@@ -34,11 +34,11 @@ var ki = "It symbolizes my commitment to perfection and my enthusiasm for develo
         }
         else if(k==="bio")
         {
-            $("#text").append("<br><img id='me' src='Diwali_2021-19 (1).jpg'></img><br><small><small>Joined the world 20 years ago</small></small><br>Hello I am B.Tech IT student at VIT Vellore. Passionate about web development and filled with curiosity about new things realted to coding.<br><br>");
+            $("#text").append("<br><img id='me' src='Diwali_2021-19 (1).jpg'></img><br><small><small>Joined the world 21 years ago</small></small><br>Hello I am B.Tech IT student at VIT Vellore. Passionate about web development and filled with curiosity about new things realted to coding.<br><br>");
         }
         else if(k==="skills")
         {
-            $("#text").append("<br>Programming Languages: JavaScript, Python, Java, C, C++ <br>Web and Database: Html, CSS, MySQL, SQLPlus, MongoDB <br>Frameworks: Bootstrap, Node JS, React JS, React Native <br>Technologies: Git, VSCode, MS Office <br>Languages: English, Hindi, Japanese <br><br>");
+            $("#text").append("<br>Programming Languages: Java, C, C++, JavaScript, Python, Kotlin <br>Web & Database: HTML, CSS, jQuery, MySQL, SQLPlus, MongoDB <br>Frameworks: Bootstrap, React.js, Angular, Flask <br>Technologies: Git, Arduino IDE, VS Code, Android Studio, AWS, MS Office <br>Languages: English, Hindi <br><br>");
         }
         else if(k==="cls")
         {
