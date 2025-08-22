@@ -34,7 +34,7 @@ var ki = "It symbolizes my commitment to perfection and my enthusiasm for develo
         }
         else if(k==="bio")
         {
-            $("#text").append("<br><img id='me' src='Diwali_2021-19 (1).jpg'></img><br><small><small>Joined the world 21 years ago</small></small><br>Hello I am B.Tech IT student at VIT Vellore. Passionate about web development and filled with curiosity about new things realted to coding.<br><br>");
+            $("#text").append("<br><img id='me' src='Diwali_2021-19 (1).jpg'></img><br><small><small>Joined the world 21 years ago</small></small><br>Hello I am a B.Tech IT student at VIT Vellore. Passionate about web development and filled with curiosity about new things realted to coding.<br><br>");
         }
         else if(k==="skills")
         {
@@ -162,3 +162,4 @@ function levenshteinDistance(a, b) {
 
     return matrix[b.length][a.length];
 }
+
